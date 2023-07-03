@@ -1,0 +1,24 @@
+// pir sensor esp8266 in built led turning on /off
+int led = 2;
+ int sensor=16;
+int val;
+
+void setup() {
+
+pinMode (led, OUTPUT);
+pinMode (sensor, INPUT);
+Serial.begin(9600);
+}
+void loop() {
+ 
+val = digitalRead(sensor);
+
+if (val == HIGH) {
+
+digitalWrite(led, HIGH);
+
+}
+else {
+
+digitalWrite(led, LOW); // turn LED OFF
+ 
